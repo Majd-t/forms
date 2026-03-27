@@ -1,4 +1,4 @@
-const API_BASE = '/backend';
+const API_BASE = 'form.altamr.net/backend';
 
 class Api {
     static async request(endpoint, method = 'GET', data = null) {
