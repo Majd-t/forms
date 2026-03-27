@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إنشاء حساب - منشئ النماذج</title>
+    <base href="/">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-layout {
+            display: flex;
+            min-height: 100vh;
+            width: 100%;
+        }
+        .auth-left {
+            flex: 1;
+            background: var(--primary-gradient);
+            color: white;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .auth-left { display: flex; }
+        }
+        .auth-right {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background-color: var(--bg-surface);
+        }
+        .auth-form-container {
+            width: 100%;
+            max-width: 420px;
+        }
+        .auth-logo {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .auth-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+        }
+        .auth-subheading {
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+        }
+        .glass-shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .shape-1 { width: 350px; height: 350px; top: -50px; right: -100px; border-radius: 50%; }
+        .shape-2 { width: 250px; height: 250px; bottom: 10%; left: -50px; transform: rotate(25deg); }
+    </style>
+</head>
+<body>
+    
+    <div class="auth-layout">
+        <!-- Left Banner -->
+        <div class="auth-left">
+            <div class="glass-shape shape-1"></div>
+            <div class="glass-shape shape-2"></div>
+            
+            <div style="position: relative; z-index: 10;" class="animate-slide-up">
+                <div style="margin-bottom: 2rem;">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.9;"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                </div>
+                <h1 style="font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; color: white;">افتح آفاقاً قوية لجمع البيانات.</h1>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 85%;">ابدأ مجاناً اليوم. لا يتطلب بطاقة ائتمانية. اكتشف أسهل طريقة لجمع البيانات التي تحتاجها بالضبط.</p>
+                
+                <ul style="margin-top: 3rem; list-style: none; opacity: 0.9; font-size: 1.1rem; line-height: 2;">
+                    <li>✓ نماذج غير محدودة</li>
+                    <li>✓ تحليلات وتقارير متقدمة</li>
+                    <li>✓ تتبع وتسجيل الردود في الوقت الفعلي</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Right Form -->
+        <div class="auth-right">
+            <div class="auth-form-container animate-fade-in">
+                <div class="auth-logo">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    منشئ النماذج
+                </div>
+                
+                <h2 class="auth-heading">إنشاء حساب</h2>
+                <p class="auth-subheading">ابدأ مجاناً وانضم لآلاف المستخدمين.</p>
+                
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">الاسم الكامل</label>
+                        <input type="text" id="name" class="form-control" required placeholder="أحمد محمد">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">البريد الإلكتروني</label>
+                        <input type="email" id="email" class="form-control" required placeholder="name@company.com">
+                    </div>
+                    
+                    <div class="form-group" style="margin-bottom: 2rem;">
+                        <label class="form-label" for="password">كلمة المرور</label>
+                        <input type="password" id="password" class="form-control" required placeholder="كلمة مرور قوية" minlength="6">
+                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">يجب أن تتكون من 6 أحرف على الأقل.</p>
+                    </div>
+                    
+                    <button type="submit" id="registerBtn" class="btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1.05rem;">
+                        إنشاء حساب الآن
+                    </button>
+                    
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
+                        بإنشائك للحساب، أنت توافق على شروط الخدمة وسياسة الخصوصية الخاصة بنا.
+                    </p>
+                </form>
+                
+                <div style="text-align: center; margin-top: 2rem; color: var(--text-muted);">
+                    لديك حساب بالفعل؟ <a href="login.html" style="font-weight: 600;">سجل دخولك هنا</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
