@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     document.getElementById('exportCsvBtn').addEventListener('click', () => {
-        window.location.href = `/backend/responses/${currentForm ? currentForm.id : formId}/export`;
+        window.location.href = `form.altamr.net/backend/responses/${currentForm ? currentForm.id : formId}/export`;
     });
 
     try {
